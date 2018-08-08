@@ -1,0 +1,72 @@
+\usepackage[dvipsnames]{xcolor} % provides \textcolor{<color>}{<text>} and \color{<color>}
+\usepackage[utf8]{inputenc} % font encoding
+\usepackage[english]{babel} % set main language
+% Format the Bibliography
+\usepackage{natbib}
+    \bibliographystyle{apalike} % citation style
+    \setlength{\bibsep}{0.0pt} % reduce line spacing in LaTex bibliography
+    \renewcommand*{\bibfont}{\footnotesize} % reduce the font size of the bibliography
+\usepackage{geometry} % to manipulate page size and margins                      
+% \usepackage{setspace} % manage spacing
+\usepackage{graphicx} % enhanced support for graphics
+% \usepackage{subfig} % to put figures side by side
+\usepackage{wrapfig} % for wrapping text around figures
+\usepackage[labelfont={color=RoyalBlue}, font={footnotesize, color=RoyalBlue}]{caption} % to center captions
+\usepackage[linktocpage=true, colorlinks=true, hidelinks]{hyperref}\urlstyle{same} % to format hyperlinks
+\usepackage{float} % containers for things in a document that cannot be broken over a page
+\usepackage{multicol} % to handle multicolumn documents
+\usepackage{lastpage} % reference last page for Page N of M type footers
+\usepackage{fancyhdr}\pagestyle{fancy}\setlength{\headheight}{24pt} % to format headings and footings
+
+% Declare fonts and set some formats
+\usepackage{anyfontsize} % to use font sizes with \fontsize{size}{baselineskip}
+\usepackage[T1]{fontenc} % to use a new font catalogue
+\usepackage[scaled]{helvet} % to use Helvetica for sans familytype
+\fontfamily{Georgia}\selectfont % to use Georgia as default serif type
+
+% Change the font and style of titles and sections
+\usepackage{titlesec} % to allow custom headings
+    \titleformat*{\section}{\color{RoyalBlue} \fontsize{14}{17} \bfseries \scshape \sffamily}
+    \titleformat*{\subsection}{\color{RoyalBlue}  \fontsize{13}{16} \sffamily}
+    \titleformat*{\subsubsection}{\color{RoyalBlue}  \fontsize{13}{16} \it \sffamily}
+    \titlelabel{\thetitle.\quad} % Add a dot after the number
+
+% Misc
+\usepackage{lipsum} % generates “lorem ipsum” text
+\usepackage{gensymb} % Provides generic commands \degree, \celsius, \perthousand, \micro and \ohm which work both in text and maths mode
+\usepackage{longtable} % For long tables
+\usepackage{booktabs} % I use this to format tables
+\usepackage{multirow} % I use this to format tables
+\usepackage{amssymb} % For special symbols
+
+% Format the Table of Contents
+\usepackage[titles]{tocloft}
+% Remove section numbers from the Table of Contents
+\makeatletter
+    \renewcommand{\cftsecpresnum}{\begin{lrbox}{\@tempboxa}}
+    \renewcommand{\cftsecaftersnum}{\end{lrbox}}
+    \renewcommand{\cftsubsecpresnum}{\begin{lrbox}{\@tempboxa}}
+    \renewcommand{\cftsubsecaftersnum}{\end{lrbox}}
+    \renewcommand{\cftsubsubsecpresnum}{\begin{lrbox}{\@tempboxa}}
+    \renewcommand{\cftsubsubsecaftersnum}{\end{lrbox}}
+\makeatother
+% Correct left spacing on the Table of Contents
+\setlength{\cftsecnumwidth}{0pt}
+\setlength{\cftsubsecnumwidth}{0pt}
+\setlength{\cftsubsubsecnumwidth}{0pt}
+%
+\setlength{\cftbeforesecskip}{6pt} % reduce line spacing in the Table of Contents
+% TOF - Title font
+\renewcommand\cfttoctitlefont{\color{RoyalBlue} \fontsize{14}{17} \bfseries \scshape \sffamily}
+% TOF - Section format
+\renewcommand\cftsecfont{\color{RoyalBlue} \fontsize{11}{13} \bfseries \scshape \sffamily}
+\renewcommand\cftsecpagefont{\color{RoyalBlue} \fontsize{11}{13} \bfseries \scshape \sffamily}
+\renewcommand\cftsecafterpnum{\par\addvspace{1pt}}
+% TOF - Sub-section format
+\renewcommand\cftsubsecfont{\color{RoyalBlue} \fontsize{11}{13} \sffamily}
+\renewcommand\cftsubsecpagefont{\color{RoyalBlue} \fontsize{11}{13} \sffamily}
+\renewcommand\cftsubsecafterpnum{\par\addvspace{1pt}}
+% TOF - Sub-sub-section format
+\renewcommand\cftsubsubsecfont{\color{RoyalBlue} \fontsize{10}{12} \it \sffamily}
+\renewcommand\cftsubsubsecpagefont{\color{RoyalBlue} \fontsize{10}{12} \it \sffamily}
+\renewcommand\cftsubsubsecafterpnum{\par\addvspace{1pt}}
